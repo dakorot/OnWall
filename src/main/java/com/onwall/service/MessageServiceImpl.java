@@ -4,17 +4,15 @@ import com.onwall.entity.Message;
 import com.onwall.repository.MessageRepository;
 import java.util.List;
 import java.util.Objects;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MessageServiceImpl implements MessageService{
 
-    private final MessageRepository messageRepository;
-
-    public MessageService(MessageRepository messageRepository)
-    {
-        this.messageRepository = messageRepository;
-    }
+    @Autowired
+    private MessageRepository messageRepository;
 
     @Override
     public Message postMessage(Message message)
